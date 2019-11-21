@@ -1,0 +1,9 @@
+# Only source code
+main.*
+!main.tex
+
+# No swap files
+.*.swp
+*.swp
+
+.DS_Store

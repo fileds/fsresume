@@ -1,0 +1,100 @@
+% A simple template for a CV/resume using minipages.
+%
+% Take a look at the class file to customize your resume!
+%
+% This template has been downloaded from:
+% https://github.com/fileds/fsresume
+%
+% Original author:
+% Filip Edström <filip.edstrom@gmail.com>
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+\documentclass[10pt]{fsresume}
+
+% For example text
+\usepackage[nopar]{lipsum}
+
+\usepackage[a4paper, 
+            top=2cm, 
+            bottom=2cm, 
+            left=1cm, 
+            right=1.5cm]{geometry}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks      = false, % Color links instead of boxes
+    urlcolor        = black, % Color for external hyperlinks
+    linkcolor       = black, % Color of internal links
+    citecolor       = black, % Color of citations
+    urlbordercolor  = black, % Color for external hyperlink boxes
+    linkbordercolor = black, % Color of internal link boxes
+    citebordercolor = black  % Color of citation boxes
+}
+
+% Variables that has to be defined
+\ExpTitleSkip{\\[3pt]}
+\ExpSkip{\\[10pt]}
+\MyName{John Doe}
+\MyEmail{john.doe@resume.com}
+\MyPhoneNumber{+4670-1234567}{0046701234567}
+\MyAdress{Example Street, Example Town, 123 45, Example Land}
+% Comment for CV/resume without photo
+\MyPhoto[6cm]{figs/cv.png}
+% Leave blank for blank footer
+\MyFooter{Liking the resume?  Check it out at my GitHub @ 
+    \href{www.github.com/fileds}{fileds}}
+
+\begin{document}
+  %
+  \begin{LeftColumn}
+    \begin{TitleBlock}
+      \MakeCvTitle
+    \end{TitleBlock}
+    %
+    \begin{ExperienceBlock}
+      \begin{ExperienceSection}{Professional Experience}
+        \Experience{2019--today}{Some Role, At Some Company, In Some Town}{
+            \lipsum[66]}
+          \Experience[]{2019}{Some Different Role, At Some Other Company, In
+              Some Other Town}{\lipsum[66]}%
+      \end{ExperienceSection}
+      %
+      \begin{ExperienceSection}{Education}
+        \Experience[]{2015--2019}{Some Education, At Some University, In Some
+            Town}{
+          \lipsum[66]} 
+      \end{ExperienceSection}
+      %
+      \begin{ExperienceSection}{Projects}
+      \Experience[]{2018}{Some Awesome Project}{\lipsum[66]}
+      \end{ExperienceSection}
+      %
+      \begin{ExperienceSection}{Extra Professional Experience}
+        \Experience[]{2015-2016}{Some Cool Experience}{\lipsum[66]}
+      \end{ExperienceSection}
+    \end{ExperienceBlock}
+  \end{LeftColumn}
+  %
+  \hspace{0.01\textwidth}\GrayVRule\hspace{0.01\textwidth}
+  %
+  \begin{ProfileColumn}
+    \section*{Profile}
+    \lipsum[66]
+    %
+    \begin{SkillsSection}{Skills}
+      \Skill{Best Skill}{5}
+      \Skill{Better Skill}{4}
+      \Skill[\\]{Decent Skill}{3}
+    \end{SkillsSection}
+    \begin{SkillsSection}{Languages}
+      \Skill{Language}{5}
+      \Skill{Language}{2}
+      \Skill[\\]{Language}{1}
+    \end{SkillsSection}
+      \section*{Hobbies}
+      Writing resume templates
+  \end{ProfileColumn}
+  %
+\end{document}
