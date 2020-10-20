@@ -1,5 +1,6 @@
-A simple resume based on minipages. The functionality is intentionally 
-minimal to allow for user modification.
+A simple resume based on minipages. 
+
+Use the compress_resume.sh to generate a compressed resume.
 
 I hope you like it!
 

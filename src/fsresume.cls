@@ -1,7 +1,7 @@
 % A simple template for a CV/resume using minipages.
 %
 % The class file has been written in a as simple way as possible to make it
-% easy for the user to edit it according to his/her needs. 
+% easy for the user to edit it according to his/her needs.
 %
 % This template has been downloaded from:
 % https://github.com/fileds/fsresume
@@ -20,7 +20,7 @@
 \LoadClass{article}
 
 % Included packages
-\RequirePackage{ifpdf}         
+\RequirePackage{ifpdf}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{array}
 \RequirePackage{xcolor}
@@ -73,7 +73,7 @@
       \end{center}
     \end{minipage}
      \vfill
-     \null 
+     \null
   }
 
 % Commands to print the title
@@ -82,14 +82,19 @@
 \newcommand{\MyPhoneNumber}[2]{\def\@MyPhoneNumber{#1}\def\@LinkNumber{#2}}
 \newcommand{\MyAdress}[1]{\def\@MyAdress{#1}}
 \newcommand{\MakeCvTitle}{%
-      {\Huge\bf \@MyName} \\ 
+      {\Huge\bf \@MyName} \\
       \vspace{10pt}
-      \faEnvelope \, 
-      \href{mailto:\@MyEmail}{\@MyEmail} \,
-      \faPhone \,  
-      \href{tel:\@LinkNumber}{\@MyPhoneNumber} \\
-      \faHome \, 
-      \@MyAdress
+      \ifthenelse{\isundefined{\@MyEmail}}{ }{%
+        \faEnvelope \,
+        \href{mailto:\@MyEmail}{\@MyEmail} \,
+      }
+      \ifthenelse{\isundefined{\@MyPhoneNumber}}{ }{%
+        \faPhone \,
+        \href{tel:\@LinkNumber}{\@MyPhoneNumber}
+      }
+      \ifthenelse{\isundefined{\@MyAdress}}{ }{%
+        \\ \faHome \, \@MyAdress
+      }
 }
 
 \newenvironment{ExperienceBlock}
@@ -98,7 +103,7 @@
   }
   {%
       \vfill
-      \null 
+      \null
     \end{minipage}
   }
 
@@ -133,7 +138,7 @@
     }
   {%
       \vfill
-      \null 
+      \null
     \end{minipage}
   }
 
